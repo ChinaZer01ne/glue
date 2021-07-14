@@ -1,6 +1,8 @@
 package com.glue.session;
 
 import com.glue.Configuration;
+import com.glue.executor.Executor;
+import com.glue.executor.SimpleExecutor;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -19,6 +21,7 @@ public class DefaultSqlSessionFactory implements SqlSessionFactory {
 
     @Override
     public SqlSession openSession() {
-        return new DefaultSqlSession(configuration);
+        Executor executor = new SimpleExecutor();
+        return new DefaultSqlSession(configuration, executor);
     }
 }

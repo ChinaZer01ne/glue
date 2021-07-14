@@ -60,7 +60,7 @@ public class SimpleExecutor implements Executor{
         List<Object> res = new ArrayList<>();
         while (resultSet.next()) {
             ResultSetMetaData metaData = resultSet.getMetaData();
-            for (int i = 1; i < metaData.getColumnCount(); i++) {
+            for (int i = 1; i <= metaData.getColumnCount(); i++) {
                 String columnName = metaData.getColumnName(i);
                 PropertyDescriptor propertyDescriptor = new PropertyDescriptor(columnName, resultClass);
                 Method writeMethod = propertyDescriptor.getWriteMethod();
