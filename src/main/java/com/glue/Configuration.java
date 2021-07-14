@@ -1,6 +1,7 @@
 package com.glue;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -16,7 +17,7 @@ public class Configuration {
     /**
      * sql配置信息
      */
-    private Map<String, MappedStatement> mappedStatements;
+    private Map<String, MappedStatement> mappedStatements = new HashMap<>();
 
     public DataSource getDataSource() {
         return dataSource;

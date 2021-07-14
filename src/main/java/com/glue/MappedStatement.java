@@ -19,7 +19,7 @@ public class MappedStatement {
     /**
      * sql
      */
-    private String sqlText;
+    private String sql;
 
     public String getId() {
         return id;
@@ -45,11 +45,11 @@ public class MappedStatement {
         this.resultType = resultType;
     }
 
-    public String getSqlText() {
-        return sqlText;
+    public String getSql() {
+        return sql;
     }
 
-    public void setSqlText(String sqlText) {
-        this.sqlText = sqlText;
+    public void setSql(String sql) {
+        this.sql = sql;
     }
 }

@@ -31,7 +31,7 @@ public class XMLConfigBuilder {
     }
 
     @SuppressWarnings("all")
-    public Configuration build(InputStream inputStream) throws DocumentException {
+    public Configuration parseConfig(InputStream inputStream) throws DocumentException {
         Document document = new SAXReader().read(inputStream);
         Element configurationElement = document.getRootElement();
         List<Element> list = configurationElement.selectNodes("//property");

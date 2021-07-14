@@ -5,6 +5,10 @@ package com.glue.session;
  */
 public interface SqlSessionFactory {
 
+    /**
+     * 创建SqlSession
+     * @return com.glue.session.SqlSession
+     */
     SqlSession openSession();
 
 }

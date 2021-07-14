@@ -41,14 +41,13 @@ public class XMLMapperBuilder {
         Map<String, MappedStatement> mappedStatements = new HashMap<>();
         for (Element element : selectList) {
             MappedStatement mappedStatement = new MappedStatement();
-            String mapperStatementId = element.attributeValue("id");
-            mappedStatement.setId(mapperStatementId);
+            mappedStatement.setId(element.attributeValue("id"));
             mappedStatement.setParameterType(element.attributeValue("parameterType"));
             mappedStatement.setResultType(element.attributeValue("resultType"));
-            mappedStatement.setSqlText(element.getTextTrim());
-            mappedStatements.put(mapperStatementId, mappedStatement);
+            mappedStatement.setSql(element.getTextTrim());
+            String mapperStatementId = namespace + element.attributeValue("id");
+            configuration.getMappedStatements().put(mapperStatementId, mappedStatement);
         }
 
-        configuration.setMappedStatements(mappedStatements);
     }
 }
